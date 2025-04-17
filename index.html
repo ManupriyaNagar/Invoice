@@ -53,6 +53,18 @@
             margin-top: 10px;
         }
 
+        .editable-invoice {
+            color: #b82f2f;
+            font-size: xx-large;
+            font-weight: 400;
+            text-align: right;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            width: 300px;
+        }
+
         .section {
             margin-top: 20px;
         }
@@ -121,7 +133,7 @@
 
         .footer {
             clear: both;
-            text-align: center;
+            text-align: left;
             margin-top: 40px;
             font-size: 12px;
             color: #666;
@@ -199,8 +211,9 @@
             </div>
         </div>
 
-        <div class="subheader">
-            Customer Invoice: BA/24-25/146
+        <div class="section" style="display: flex; align-content: right; font-weight: 100;">
+            <h1 style="color: #a12828;">Invoice:</h3>
+            <input type="text" class="editable-invoice" id="invoiceNumber" value=" BA/24-25/146" oninput="updateInvoice()">
         </div>
 
         <div class="section">
@@ -352,7 +365,7 @@
         <div class="footer">
             <p>** Cost of any third party tool, special animations, buying stock photos and videos will be charged extra
                 and deployed only after prior approval</p>
-            <p>RBSH Studio Pvt. Ltd., Noida, UP - 201306 | www.rbshstudio.com | info@rbshstudio.com</p>
+            <p style="margin-left: 6px;">RBSH Studio Pvt. Ltd., Noida, UP - 201306 | www.rbshstudio.com | info@rbshstudio.com</p>
         </div>
 
         
@@ -379,7 +392,7 @@
         </div>
 
         <button style="align-items: right; display: flex-reverse;"
-        class="generate-btn" onclick="window.location.href='generated_invoice.html'">Generate Bill</button>
+        class="generate-btn" onclick="window.location.href='secons.html'">Generate Bill</button>
 
     </div>
 
@@ -412,6 +425,11 @@
                     <td>₹ ${igst.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
                 </tr>
             `;
+        }
+
+        function updateInvoice() {
+            // This function can be used to update the invoice number if needed
+            // Currently, it just ensures the input value is reflected
         }
 
         // Run calculation on load and input

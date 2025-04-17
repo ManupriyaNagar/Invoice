@@ -2,89 +2,343 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RBSH Studio</title>
+    <title>Generated Invoice</title>
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #fff;
+            padding: 0;
         }
-        .container {
-            display: flex;
-            align-items: center;
-            background: linear-gradient(to right, #fff 50%, #fce4ec 50%);
-            width: 600px;
-            height: 300px;
-            border-radius: 150px 0 0 150px;
-            overflow: hidden;
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
         }
-        .logo-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .logo {
-            font-size: 60px;
+
+        .invoice-box {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
             color: #000;
         }
-        .logo span:nth-child(1) {
-            color: #ff0000;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
         }
-        .logo span:nth-child(2) {
-            color: #ffcc00;
+
+        .header img {
+            height: 100px;
         }
-        .logo span:nth-child(3) {
-            color: #00cc00;
+
+        .header p {
+            font-weight: bold;
         }
-        .logo span:nth-child(4) {
-            color: #0000ff;
+
+        .section {
+            margin-top: 20px;
         }
-        .tagline {
-            color: #cc0000;
-            font-size: 18px;
+
+        .section h3 {
+            margin-bottom: 5px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        .invoice-number {
+            color: #b82f2f;
+            font-size: xx-large;
+            font-weight: 400;
+            text-align: right;
             margin-top: 10px;
         }
-        .info-section {
-            margin: 0;
-            flex: 1;
-            padding: 0;
-            font-size: 14px;
-            line-height: 1.5;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
-        .info-section h2 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
         }
-        .info-section p {
-            margin: 5px 0;
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #b82f2f;
+            color: white;
+            font-weight: 600;
+        }
+
+        .totals {
+            float: right;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        .totals table {
+            border: none;
+        }
+
+        .totals td {
+            border: none;
+            text-align: right;
+            padding: 5px 0;
+        }
+
+        .totals td:last-child {
+            font-weight: bold;
+        }
+
+        .footer {
+            clear: both;
+            text-align: left;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .hsn-summary-table {
+            margin-top: 20px;
+        }
+
+        .hsn-summary-table th {
+            background-color: #b82f2f;
+            color: white;
+        }
+
+        .hsn-summary-table td {
+            border: 1px solid #ccc;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="logo-section">
-            <div class="logo">
-                <span>R</span><span>B</span><span>S</span><span>H</span>
+    <div class="invoice-box">
+        <div class="header">
+            <div>
+                <img src="/Innovce/logo1.png" alt="RBSH Logo">
+                <p style="color: #b82f2f; font: extrabold;">Responsive Branding Solution Hub</p>
             </div>
-            <div class="logo">studio</div>
-            <div class="tagline">Responsive Branding Solution Hub</div>
+            <div style="
+            height: 60%;
+            width: 100%;
+            background-color: #f9eeee;
+            border-bottom-left-radius: 200px;
+            padding: 40px 60px;
+            width: fit-content;
+            text-align: right;
+            font-family: sans-serif;
+            color: #111827;
+            margin: 0;
+            padding: 0;
+        ">
+                <h3 style="margin-bottom: 20px; font-weight: bold;">RBSH STUDIO PRIVATE LIMITED</h3>
+                <p style="margin: 5px 0;">CIN: U74103UP2024PTC206423</p>
+                <p style="margin: 5px 0;">GSTIN: 09AANCR8081N1ZE</p>
+                <p style="margin: 5px 0;">
+                    T3-236, Golden - I, Techzone - IV<br>
+                    Grater Noida West, Noida<br>
+                    Uttar Pradesh - 201306 IN
+                </p>
+            </div>
         </div>
-        <div class="info-section">
-            <h2>RBSH STUDIO PRIVATE LIMITED</h2>
-            <p>CIN: U74103UP2024PTC206423</p>
-            <p>GSTIN: 09AAANCR8081N1ZE</p>
-            <p>T3-236, Golden - I, Techzone - IV</p>
-            <p>Grater Noida West, Noida</p>
-            <p>Uttar Pradesh- 201306 IN</p>
+
+        <div class="section" style="display: flex; align-content: right; font-weight: 100;">
+            <h1 style="color: #a12828;">Invoice:</h3>
+            <div class="invoice-number" id="invoiceNumber"></div>
+        </div>
+
+        <div class="section">
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1">
+                    <h3>Customer Info:</h3>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Customer Name</label>
+                        <div style="flex: 1;" id="customerName"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Address Line 1</label>
+                        <div style="flex: 1;" id="address1"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Address Line 2</label>
+                        <div style="flex: 1;" id="address2"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">City, Zip</label>
+                        <div style="flex: 1;" id="cityZip"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">State</label>
+                        <div style="flex: 1;" id="state"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Country</label>
+                        <div style="flex: 1;" id="country"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">GSTIN</label>
+                        <div style="flex: 1;" id="gstin"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Place of Supply</label>
+                        <div style="flex: 1;" id="placeSupply"></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="display: flex; flex-direction: column; border: 2px solid #f0efef; border-radius: 12px; padding: 20px; background-color: #f8f8f8; font-family: sans-serif; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                        <label style="margin-bottom: 5px; font-weight: 500; color: #555;">Invoice Date</label>
+                        <div style="padding: 8px 12px; border-radius: 8px; font-size: 14px;" id="invoiceDate"></div>
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                        <label style="margin-bottom: 5px; font-weight: 500; color: #555;">Due Date</label>
+                        <div style="padding: 8px 12px; border-radius: 8px; font-size: 14px;" id="dueDate"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif; background-color: #fff; table-layout: fixed;">
+            <thead>
+                <tr style="background-color: #f5f5f5; color: #333;">
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 20%;">Description</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">HSN/SAC</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">Quantity</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 15%;">Unit Price</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">Disc.%</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">GST</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 15%;">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;" id="description"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" id="hsn"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" id="qty"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" id="price"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" id="discount"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" id="tax"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" class="right" id="amount"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div class="container">
+                <div class="payment-info">Payment Communication: BA/24-25/146</div>
+                <div style="display: flex;">
+                    <div class="qr-code">.</div>
+                    <div>
+                        <div class="payment-info">PAYMENT QR CODE</div>
+                        <div class="upi-id">UPI ID: rbsh@idfcbank</div>
+                        <div class="logos">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PhonePe_logo.svg/1200px-PhonePe_logo.svg.png" alt="PhonePe">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/GPay_logo_2020.svg/1200px-GPay_logo_2020.svg.png" alt="Google Pay">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Paytm_logo_2016.svg/1200px-Paytm_logo_2016.svg.png" alt="Paytm">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UPI-Logo.svg/1200px-UPI-Logo.svg.png" alt="UPI">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="totals" style="width: 300px; margin-top: 20px;">
+                <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; color: #333;">Untaxed Amount</td>
+                        <td style="padding: 10px; text-align: right; color: #333;" id="untaxed"></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f0f0f0;">
+                        <td style="padding: 10px; color: #333;">IGST</td>
+                        <td style="padding: 10px; text-align: right; color: #333;" id="igst"></td>
+                    </tr>
+                    <tr style="background-color: #b82f2f; color: white; border-radius: 0 0 10px 10px; overflow: hidden;">
+                        <td style="padding: 10px;">Total</td>
+                        <td style="padding: 10px; text-align: right;" id="total"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="footer">
+            <p>** Cost of any third party tool, special animations, buying stock photos and videos will be charged extra and deployed only after prior approval</p>
+            <p style="margin-left: 6px;">RBSH Studio Pvt. Ltd., Noida, UP - 201306 | www.rbshstudio.com | info@rbshstudio.com</p>
+        </div>
+
+        <div class="hsn-summary-table">
+            <h3>HSN Summary</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-family: Arial, sans-serif;">
+                <thead>
+                    <tr style="background-color: #b82f2f; color: white;">
+                        <th style="padding: 10px; width: 20%;">HSN/SAC</th>
+                        <th style="padding: 10px; width: 20%;">QUANTITY</th>
+                        <th style="padding: 10px; width: 20%;">RATE %</th>
+                        <th style="padding: 10px; width: 20%;">TAXABLE VALUE</th>
+                        <th style="padding: 10px; width: 20%;">IGST</th>
+                    </tr>
+                </thead>
+                <tbody id="hsnSummaryBody">
+                    <!-- HSN summary will be populated here -->
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('invoiceNumber').textContent = urlParams.get('invoiceNumber') || ' BA/24-25/146';
+            document.getElementById('customerName').textContent = urlParams.get('customerName') || 'ANCIT FOITUS LLP';
+            document.getElementById('address1').textContent = urlParams.get('address1') || 'Flat No. A - 606 MARUDHAR RESIDENCY Kondhwa Road Pune';
+            document.getElementById('address2').textContent = urlParams.get('address2') || 'Kondhwa Road, NEAR CORONA SOCIETY, Kondhwa Budruk';
+            document.getElementById('cityZip').textContent = urlParams.get('cityZip') || 'Pune 411048';
+            document.getElementById('state').textContent = urlParams.get('state') || 'Maharashtra MH';
+            document.getElementById('country').textContent = urlParams.get('country') || 'India';
+            document.getElementById('gstin').textContent = urlParams.get('gstin') || '27ABWFA9662R1Z3';
+            document.getElementById('placeSupply').textContent = urlParams.get('placeSupply') || 'Maharashtra';
+            document.getElementById('invoiceDate').textContent = urlParams.get('invoiceDate') || new Date().toISOString().split('T')[0];
+            document.getElementById('dueDate').textContent = urlParams.get('dueDate') || new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            document.getElementById('description').textContent = urlParams.get('description') || 'Website Redevelopment (Minor Changes)';
+            document.getElementById('hsn').textContent = urlParams.get('hsn') || '998314';
+            document.getElementById('qty').textContent = urlParams.get('qty') || '1';
+            document.getElementById('price').textContent = `₹ ${parseFloat(urlParams.get('price') || '25000').toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+            document.getElementById('discount').textContent = `${urlParams.get('discount') || '20'}%`;
+            document.getElementById('tax').textContent = `${urlParams.get('tax') || '18'}%`;
+            document.getElementById('amount').textContent = urlParams.get('amount') || '₹ 0.00';
+            document.getElementById('untaxed').textContent = urlParams.get('untaxed') || '₹ 20,000.00';
+            document.getElementById('igst').textContent = urlParams.get('igst') || '₹ 3,600.00';
+            document.getElementById('total').textContent = urlParams.get('total') || '₹ 23,600.00';
+
+            // HSN Summary
+            const hsnSummaryBody = document.getElementById('hsnSummaryBody');
+            hsnSummaryBody.innerHTML = `
+                <tr>
+                    <td>${urlParams.get('hsn') || '998314'}</td>
+                    <td>${urlParams.get('qty') || '1'}</td>
+                    <td>${urlParams.get('tax') || '18'}%</td>
+                    <td>${urlParams.get('untaxed') || '₹ 20,000.00'}</td>
+                    <td>${urlParams.get('igst') || '₹ 3,600.00'}</td>
+                </tr>
+            `;
+        }
+    </script>
 </body>
 </html>
