@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+        }
+
+        .invoice-box {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            color: #000;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 100px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin: 0;
+        }
+
+        .header p {
+            font-weight: bold;
+        }
+
+        .subheader {
+            color: #b82f2f;
+            font-size: xx-large;
+            font-weight: 400;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h3 {
+            margin-bottom: 5px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 6px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #b82f2f;
+            color: white;
+            font-weight: 600;
+        }
+
+        .totals {
+            float: right;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        .totals table {
+            border: none;
+        }
+
+        .totals td {
+            border: none;
+            text-align: right;
+            padding: 5px 0;
+        }
+
+        .totals td:last-child {
+            font-weight: bold;
+        }
+
+        .footer {
+            clear: both;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .highlight {
+            background: #b82f2f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .hello {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hsn-summary-table {
+            margin-top: 20px;
+        }
+
+        .hsn-summary-table th {
+            background-color: #b82f2f;
+            color: white;
+        }
+
+        .hsn-summary-table td {
+            border: 1px solid #ccc;
+        }
+        .generate-btn {
+            text-align: right;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #b82f2f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .generate-btn:hover {
+      background-color: #a12828;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <div class="header">
+            <div>
+                <img src="/Innovce/logo1.png" alt="RBSH Logo">
+                <p style="color: #b82f2f; font: extrabold;">Responsive Branding Solution Hub</p>
+            </div>
+            <div style="
+            height: 60%;
+            width: 100%;
+            background-color: #f9eeee;
+            border-bottom-left-radius: 200px;
+            padding: 40px 60px;
+            width: fit-content;
+            text-align: right;
+            font-family: sans-serif;
+            color: #111827;
+            margin: 0;
+            padding: 0;
+        ">
+                <h3 style="margin-bottom: 20px; font-weight: bold;">RBSH STUDIO PRIVATE LIMITED</h3>
+                <p style="margin: 5px 0;">CIN: U74103UP2024PTC206423</p>
+                <p style="margin: 5px 0;">GSTIN: 09AANCR8081N1ZE</p>
+                <p style="margin: 5px 0;">
+                    T3-236, Golden - I, Techzone - IV<br>
+                    Grater Noida West, Noida<br>
+                    Uttar Pradesh - 201306 IN
+                </p>
+            </div>
+        </div>
+
+        <div class="subheader">
+            Customer Invoice: BA/24-25/146
+        </div>
+
+        <div class="section">
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1">
+                    <h3>Customer Info:</h3>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Customer Name</label>
+                        <input type="text" placeholder="ANCIT FOITUS LLP" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Address Line 1</label>
+                        <input type="text" placeholder="Flat No. A - 606 MARUDHAR RESIDENCY Kondhwa Road Pune" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Address Line 2</label>
+                        <input type="text" placeholder="Kondhwa Road, NEAR CORONA SOCIETY, Kondhwa Budruk" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">City, Zip</label>
+                        <input type="text" placeholder="Pune 411048" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">State</label>
+                        <input type="text" placeholder="Maharashtra MH" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Country</label>
+                        <input type="text" placeholder="India" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">GSTIN</label>
+                        <input type="text" placeholder="27ABWFA9662R1Z3" style="flex: 1;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <label style="width: 150px;">Place of Supply</label>
+                        <input type="text" placeholder="Maharashtra" style="flex: 1;">
+                    </div>
+                </div>
+            </div>
+            <div
+                style="display: flex; flex-direction: column; border: 2px solid #f0efef; border-radius: 12px; padding: 20px; background-color: #f8f8f8; font-family: sans-serif; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                        <label for="invoiceDate" style="margin-bottom: 5px; font-weight: 500; color: #555;">Invoice Date</label>
+                        <input type="date" id="invoiceDate" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;" placeholder="YYYY-MM-DD">
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                        <label for="dueDate" style="margin-bottom: 5px; font-weight: 500; color: #555;">Due Date</label>
+                        <input type="date" id="dueDate" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;" placeholder="YYYY-MM-DD">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif; background-color: #fff; table-layout: fixed;">
+            <thead>
+                <tr style="background-color: #f5f5f5; color: #333;">
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 20%;">Description</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">HSN/SAC</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">Quantity</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 15%;">Unit Price</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">Disc.%</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 10%;">GST</th>
+                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: 600; width: 15%;">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="transition: background-color 0.3s;">
+                    <td style="padding: 10px; border: 1px solid #ddd;"><input type="text" value="Website Redevelopment (Minor Changes)" style="width: 100%; padding: 6px; border: none; border-radius: 0; text-align: center; background: transparent;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><input type="text" value="998314" style="width: 100%; padding: 6px; border: none; border-radius: 0; text-align: center; background: transparent;" id="hsn"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" id="qty" value="1" oninput="calculate()" style="width: 100%; padding: 6px; border: none; border-radius: 0; text-align: center; background: transparent;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" id="price" value="25000" oninput="calculate()" style="width: 100%; padding: 6px; border: none; border-radius: 0; text-align: center; background: transparent;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" id="discount" value="20" oninput="calculate()" style="width: 100%; padding: 6px; border: none; border-radius: 0; text-align: center; background: transparent;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" id="tax" value="18" oninput="calculate()" style="width: 100%; padding: 6px; border: none; border-radius: 0; text-align: center; background: transparent;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;" class="right" id="amount">₹ 0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <style>
+            table input:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            tbody tr:hover {
+                background-color: #f9f9f9;
+            }
+            .right {
+                font-weight: 600;
+                color: #2c3e50;
+            }
+            table {
+                overflow: hidden;
+            }
+            td input {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        </style>
+
+<div style="display: flex; justify-content: space-between;">
+<div class="container">
+    <div class="payment-info">Payment Communication: BA/24-25/146</div>
+    <div style="display: flex;">
+    <div class="qr-code">.</div>
+    <div>
+    <div class="payment-info">PAYMENT QR CODE</div>
+    <div class="upi-id">UPI ID: rbsh@idfcbank</div>
+    <div class="logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PhonePe_logo.svg/1200px-PhonePe_logo.svg.png" alt="PhonePe">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/GPay_logo_2020.svg/1200px-GPay_logo_2020.svg.png" alt="Google Pay">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Paytm_logo_2016.svg/1200px-Paytm_logo_2016.svg.png" alt="Paytm">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/UPI-Logo.svg/1200px-UPI-Logo.svg.png" alt="UPI">
+    </div>
+</div>
+</div>
+  </div>
+
+        <div class="totals" style="width: 300px; margin-top: 20px;">
+            <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px; color: #333;">Untaxed Amount</td>
+                    <td style="padding: 10px; text-align: right; color: #333;" id="untaxed">₹ 20,000.00</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd; background-color: #f0f0f0;">
+                    <td style="padding: 10px; color: #333;">IGST</td>
+                    <td style="padding: 10px; text-align: right; color: #333;" id="igst">₹ 3,600.00</td>
+                </tr>
+                <tr style="background-color: #b82f2f; color: white; border-radius: 0 0 10px 10px; overflow: hidden;">
+                    <td style="padding: 10px;">Total</td>
+                    <td style="padding: 10px; text-align: right;" id="total">₹ 23,600.00</td>
+                </tr>
+            </table>
+        </div>
+      
+        <style>
+            .totals table td {
+                border: none;
+            }
+            .totals table tr:last-child td {
+                border-bottom: none;
+            }
+        </style>
+        </div>
+
+<br>
+
+        <div class="footer">
+            <p>** Cost of any third party tool, special animations, buying stock photos and videos will be charged extra
+                and deployed only after prior approval</p>
+            <p>RBSH Studio Pvt. Ltd., Noida, UP - 201306 | www.rbshstudio.com | info@rbshstudio.com</p>
+        </div>
+
+        
+        <div class="hsn-summary-table">
+
+            <h3>HSN Summary</h3>
+           
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-family: Arial, sans-serif;">
+              
+                <thead>
+                    <!-- <h3>HSN Summary</h3> -->
+                    <tr style="background-color: #b82f2f; color: white;">
+                        <th style="padding: 10px; width: 20%;">HSN/SAC</th>
+                        <th style="padding: 10px; width: 20%;">QUANTITY</th>
+                        <th style="padding: 10px; width: 20%;">RATE %</th>
+                        <th style="padding: 10px; width: 20%;">TAXABLE VALUE</th>
+                        <th style="padding: 10px; width: 20%;">IGST</th>
+                    </tr>
+                </thead>
+                <tbody id="hsnSummaryBody">
+                    <!-- HSN summary will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <button style="align-items: right; display: flex-reverse;"
+        class="generate-btn" onclick="window.location.href='generated_invoice.html'">Generate Bill</button>
+
+    </div>
+
+    <script>
+        function calculate() {
+            const qty = parseFloat(document.getElementById('qty').value) || 0;
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const discount = parseFloat(document.getElementById('discount').value) || 0;
+            const tax = parseFloat(document.getElementById('tax').value) || 0;
+            const hsn = document.getElementById('hsn').value || '998314';
+
+            const base = qty * price;
+            const discounted = base * (1 - discount / 100);
+            const igst = discounted * (tax / 100);
+            const total = discounted + igst;
+
+            document.getElementById('amount').innerText = `₹ ${discounted.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+            document.getElementById('untaxed').innerText = `₹ ${discounted.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+            document.getElementById('igst').innerText = `₹ ${igst.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+            document.getElementById('total').innerText = `₹ ${total.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+
+            // Generate HSN Summary
+            const hsnSummaryBody = document.getElementById('hsnSummaryBody');
+            hsnSummaryBody.innerHTML = `
+                <tr>
+                    <td>${hsn}</td>
+                    <td>${qty}</td>
+                    <td>${tax}</td>
+                    <td>₹ ${discounted.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                    <td>₹ ${igst.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                </tr>
+            `;
+        }
+
+        // Run calculation on load and input
+        window.onload = calculate;
+        document.querySelectorAll('#qty, #price, #discount, #tax, #hsn').forEach(input => {
+            input.addEventListener('input', calculate);
+        });
+    </script>
+</body>
+
+</html>
